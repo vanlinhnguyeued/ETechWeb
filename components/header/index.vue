@@ -7,7 +7,7 @@
       <Menu />
       <Dropdown />
     </div>
-    <div class="header--menu" @click="isShowMenu = true">
+    <div class="header--menu" @click="openMenu">
       <img src="~/assets/icons/menu.png" />
     </div>
     <MenuCollapse v-show="isShowMenu" @close="closeMenu" />
@@ -50,6 +50,11 @@ export default {
     },
     closeMenu() {
       this.isShowMenu = false
+      document.body.classList.remove('modal-open')
+    },
+    openMenu() {
+      this.isShowMenu = true
+      document.body.classList.add('modal-open')
     },
   },
 }

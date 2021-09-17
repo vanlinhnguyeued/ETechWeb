@@ -6,21 +6,23 @@
         <img src="../../assets/icons/arrow-square-left.png" />
       </button>
       <div class="slide__container">
-        <VueSlickCarousel
-          :arrows="false"
-          :dots="false"
-          :slidesToShow="5"
-          :slidesToScroll="1"
-          :swipe="false"
-          ref="carousel"
-          :responsive="slickResponsive"
-        >
-          <div class="slide__item" v-for="item in partners" :key="item.id">
-            <div class="item__content">
-              <img :src="item.image" />
+        <client-only>
+          <VueSlickCarousel
+            :arrows="false"
+            :dots="false"
+            :slidesToShow="5"
+            :slidesToScroll="1"
+            :swipe="false"
+            ref="carousel"
+            :responsive="slickResponsive"
+          >
+            <div class="slide__item" v-for="item in partners" :key="item.id">
+              <div class="item__content">
+                <img :src="item.image" />
+              </div>
             </div>
-          </div>
-        </VueSlickCarousel>
+          </VueSlickCarousel>
+        </client-only>
       </div>
       <button class="btn--next" @click="showNext()">
         <img src="../../assets/icons/arrow-square-left.png" />
