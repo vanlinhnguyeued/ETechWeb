@@ -7,6 +7,10 @@
       <Menu />
       <Dropdown />
     </div>
+    <div class="header--menu" @click="isShowMenu = true">
+      <img src="~/assets/icons/menu.png" />
+    </div>
+    <MenuCollapse v-show="isShowMenu" @close="closeMenu" />
   </div>
 </template>
 
@@ -16,7 +20,7 @@ export default {
   data() {
     return {
       isVisibleBacground: false,
-      isNavCollapseVisible: false,
+      isShowMenu: false,
     }
   },
 
@@ -44,8 +48,8 @@ export default {
     onWindowScroll() {
       this.isVisibleBacground = window.pageYOffset > 0
     },
-    closeNavCollapse() {
-      this.isNavCollapseVisible = false
+    closeMenu() {
+      this.isShowMenu = false
     },
   },
 }
@@ -62,7 +66,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 20px;
+  padding: 20px 80px;
   &.fixed {
     background: #441dbb;
   }
@@ -70,8 +74,6 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-left: 80px;
-    padding-top: 20px;
     .logo {
       width: 109px;
       height: 64px;
@@ -83,8 +85,30 @@ export default {
     justify-content: flex-end;
     align-items: flex-start;
     flex-direction: row;
-    padding-right: 80px;
-    padding-top: 40px;
+    padding-top: 20px;
+  }
+  &--menu {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include tablet-landscape-down {
+    padding: 24px 16px;
+  }
+
+  @include tablet-portrait-down {
+    &--right {
+      display: none;
+    }
+    &--menu {
+      display: flex;
+    }
   }
 }
 </style>

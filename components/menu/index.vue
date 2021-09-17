@@ -75,5 +75,11 @@ export default {
       margin-right: 40px;
     }
   }
+
+  @include tablet-landscape-down {
+    &__item {
+      margin-right: 15px;
+    }
+  }
 }
 </style>

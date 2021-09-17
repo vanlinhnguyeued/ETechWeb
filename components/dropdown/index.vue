@@ -1,7 +1,16 @@
 <template>
-  <div v-click-outside="clickOutside" class="dropdown" @click="onClick()">
+  <div
+    v-click-outside="clickOutside"
+    :class="!forMobile ? 'dropdown' : 'dropdown-mobile'"
+    @click="onClick()"
+  >
     <img :src="selected.flag" class="flag" />
-    <img src="../../assets/icons/arrow-down.png" class="icon" />
+    <img
+      :src="
+        require(`~/assets/icons/arrow-down${forMobile ? '-black' : ''}.png`)
+      "
+      class="icon"
+    />
     <div :class="isShow ? 'dropdown--show' : 'dropdown--hidden'">
       <NuxtLink
         v-for="(item, index) in langs"
@@ -12,7 +21,7 @@
         <div class="checked">
           <img
             v-show="item.name === selected.name"
-            src="../../assets/icons/checked.png"
+            src="~/assets/icons/checked.png"
             class="seleted"
           />
         </div>
@@ -26,6 +35,14 @@
 <script>
 export default {
   name: 'Dropdown',
+
+  props: {
+    forMobile: {
+      type: Boolean,
+      required: false,
+    },
+  },
+
   directives: {
     'click-outside': {
       bind: function (el, binding) {
@@ -43,27 +60,29 @@ export default {
       },
     },
   },
+
   data() {
     return {
       isShow: false,
       langs: [
         {
           name: this.$t('header.vietnamese'),
-          flag: require('../../assets/icons/flags/vietnam.png'),
+          flag: require('~/assets/icons/flags/vietnam.png'),
           code: 'vi-VN',
         },
         {
           name: this.$t('header.english'),
-          flag: require('../../assets/icons/flags/united-states.png'),
+          flag: require('~/assets/icons/flags/united-states.png'),
           code: 'en-US',
         },
       ],
       selected: {
         name: this.$t('header.english'),
-        flag: require('../../assets/icons/flags/united-states.png'),
+        flag: require('~/assets/icons/flags/united-states.png'),
       },
     }
   },
+
   mounted() {
     this.selected = this.langs.find((item) =>
       location.pathname.includes(item.code)
@@ -82,6 +101,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dropdown-mobile,
 .dropdown {
   display: flex;
   flex-direction: row;
@@ -101,8 +121,8 @@ export default {
     margin-left: 14.33px;
   }
 
-  &--show,
-  &--hidden {
+  .dropdown--show,
+  .dropdown--hidden {
     width: 156px;
     height: 81px;
     background-color: #ffffff;
@@ -122,7 +142,7 @@ export default {
     border: 1px solid #eeeeee;
   }
 
-  &--hidden {
+  .dropdown--hidden {
     visibility: hidden;
     opacity: 0;
   }
@@ -160,6 +180,24 @@ export default {
 
   .boder--bottom {
     border-bottom: solid 1px #c4c4c4;
+  }
+}
+.dropdown-mobile {
+  width: 80px;
+  height: 40px;
+  background-color: #f6f6f6;
+  border: 1px solid #afafaf;
+  padding: 4px 12px;
+  border-radius: 8px;
+  .icon {
+    width: 10px;
+    height: 5px;
+    margin-left: 9.67px;
+  }
+  .dropdown--hidden,
+  .dropdown--show {
+    left: 0px;
+    right: unset;
   }
 }
 </style>
