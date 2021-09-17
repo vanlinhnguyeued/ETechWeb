@@ -78,5 +78,10 @@ export default {
     transform: rotate(180deg);
     transform-origin: center;
   }
+
+  @include tablet-portrait-down {
+    right: 16px;
+    bottom: 16px;
+  }
 }
 </style>

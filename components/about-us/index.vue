@@ -230,7 +230,7 @@ export default {
   }
 
   @include tablet-landscape-down {
-    padding: 157px 0 0;
+    padding: 80px 0 0;
     .intro {
       margin-bottom: 40px;
       flex-direction: column;

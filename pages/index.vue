@@ -1,7 +1,7 @@
 <template>
   <div class="landing-page">
     <ScrollButton />
-    <Header />
+    <!-- <Header /> -->
     <Banner />
     <AboutUs />
     <Games />

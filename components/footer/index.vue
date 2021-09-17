@@ -21,5 +21,6 @@ export default {
   font-weight: 400;
   line-height: 22.68px;
   color: #ffffff;
+  margin-top: -1px;
 }
 </style>

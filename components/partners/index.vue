@@ -174,9 +174,9 @@ export default {
       width: 100%;
     }
     .slide__item {
-      width: 220px !important;
+      width: 200px !important;
       height: 72px;
-      padding-inline: 12px;
+      padding-inline: 6px;
     }
     .item__content {
       width: 188px;

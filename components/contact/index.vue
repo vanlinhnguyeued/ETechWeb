@@ -74,6 +74,9 @@ export default {
   height: 446px;
   padding: 104px 230px 0;
   background-image: url('../../assets/images/contact-bg.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &--left {
     display: flex;
@@ -161,7 +164,9 @@ export default {
         margin-inline: 8px;
       }
     }
-
+    .follow {
+      margin-right: 0;
+    }
     .descript {
       margin-bottom: 12px;
     }
@@ -246,8 +251,64 @@ export default {
     color: #ffffff;
   }
 
-  @include big-desktop-down {
-    padding: 104px 130px 0;
+  @include big-desktop-up {
+    background-size: 100% auto;
+  }
+
+  @include medium-desktop-down {
+    padding-inline: 60px;
+    background-size: auto 100%;
+
+    &--left {
+      margin-right: 50px;
+    }
+  }
+
+  @include tablet-landscape-down {
+    height: auto;
+    padding: 40px 40px 62px;
+    &--right {
+      display: flex;
+      flex-direction: column;
+      .address {
+        margin-right: 0;
+        margin-bottom: 68px;
+        &__infor {
+          margin-bottom: 20px;
+        }
+      }
+      .title {
+        margin-bottom: 20px;
+      }
+      .descript {
+        margin-bottom: 0;
+      }
+      .email {
+        margin-top: 17px;
+      }
+    }
+  }
+
+  @include tablet-portrait-down {
+    padding: 40px 16px 62px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/images/contact-mobile.png');
+    background-size: 100% 100%;
+    &--left {
+      margin-right: unset;
+      margin-bottom: 68px;
+    }
+
+    &--right {
+      align-items: center;
+      width: 100%;
+      .address,
+      .follow {
+        max-width: 100%;
+      }
+    }
   }
 }
 </style>
