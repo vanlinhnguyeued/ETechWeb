@@ -69,8 +69,8 @@ export default {
   align-items: center;
   background-image: url('../../assets/images/fairy.png'),
     url('../../assets/images/banner.png');
-  background-size: auto auto, 100% auto;
-  background-position: 0px 80px, 0px 0px;
+  background-size: auto auto, 100% 100%;
+  background-position: 0px 50px, center;
   background-repeat: no-repeat;
   width: 100%;
   height: 988.64px;
@@ -84,7 +84,10 @@ export default {
     letter-spacing: 0.6px;
     color: #ffffff;
     margin-top: 294px;
+    text-align: center;
+    max-width: 95%;
   }
+
   .count-down {
     display: flex;
     flex-direction: row;
@@ -98,6 +101,7 @@ export default {
     box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.25);
     margin-top: 21px;
     color: #000000;
+    max-width: 95%;
 
     .time {
       display: flex;
@@ -124,6 +128,7 @@ export default {
         text-transform: capitalize;
       }
     }
+
     span {
       font-family: 'Montserrat', serif;
       font-size: 65.17px;
@@ -132,6 +137,7 @@ export default {
       align-self: flex-start;
     }
   }
+
   .discript {
     font-family: 'Montserrat', serif;
     font-size: 18px;
@@ -140,8 +146,11 @@ export default {
     width: 560px;
     text-align: center;
     margin-top: 97.1px;
+    max-width: 95%;
   }
+
   .email {
+    max-width: 95%;
     width: 560px;
     height: 56px;
     margin-top: 32px;
@@ -171,14 +180,99 @@ export default {
       margin-right: 17px;
       cursor: pointer;
       transition: 0.3s;
+
       &:hover {
         transform: scale(1.5);
       }
+
       img {
         width: 100%;
         height: 100%;
         object-fit: contain;
       }
+    }
+  }
+
+  @include medium-desktop-down {
+    background-size: auto 70%, auto 100%;
+    background-position: 0px 90%, center;
+    .title {
+      font-size: 60px;
+    }
+    .count-down {
+      padding: 26px;
+      width: 500px;
+      height: 130px;
+      .time {
+        .value {
+          font-size: 50px;
+        }
+        .name {
+          font-size: 15px;
+        }
+      }
+      span {
+        font-size: 50px;
+      }
+    }
+    .email,
+    .discript {
+      width: 500px;
+    }
+  }
+
+  @include tablet-landscape-down {
+    .title {
+      font-size: 50px;
+      margin-top: 150px;
+    }
+  }
+
+  @include tablet-portrait-down {
+    height: 824px;
+    background-image: url('../../assets/images/fairy-crop.png'),
+      url('../../assets/images/bg-mobile.png');
+    background-size: auto 35%, 100% 100%;
+    background-position: 70% 103%, center;
+
+    .title {
+      font-size: 40px;
+      margin-top: 108px;
+      line-height: 50px;
+      width: 343px;
+    }
+    .count-down {
+      width: 343px;
+      height: 118px;
+      .time {
+        .value {
+          font-size: 36px;
+          width: 54px;
+          height: 46px;
+          line-height: 45px;
+        }
+        .name {
+          font-size: 12px;
+          margin-top: 3px;
+          line-height: 15px;
+        }
+      }
+      span {
+        font-size: 40px;
+      }
+    }
+    .email,
+    .discript {
+      width: 343px;
+    }
+    .discript {
+      margin-top: 40px;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.9px;
+    }
+    .email {
+      margin-top: 16px;
     }
   }
 }

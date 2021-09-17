@@ -148,6 +148,7 @@ export default {
     grid: auto / repeat(4, 1fr);
     gap: 40px;
     width: 100%;
+    max-width: 1800px;
 
     .item {
       width: 100%;
@@ -171,7 +172,8 @@ export default {
         left: 0;
         img {
           height: 100%;
-          object-fit: contain;
+          width: 100%;
+          object-fit: cover;
         }
       }
 

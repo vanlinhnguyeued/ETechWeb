@@ -69,5 +69,11 @@ export default {
   .nuxt-link-active::before {
     width: 100%;
   }
+
+  @include desktop-down {
+    &__item {
+      margin-right: 40px;
+    }
+  }
 }
 </style>

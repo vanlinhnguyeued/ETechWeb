@@ -245,5 +245,9 @@ export default {
   ::-ms-input-placeholder {
     color: #ffffff;
   }
+
+  @include big-desktop-down {
+    padding: 104px 130px 0;
+  }
 }
 </style>

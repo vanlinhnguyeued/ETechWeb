@@ -1,24 +1,30 @@
 @import './variables';
-@mixin tablet-portrait-up {
-  @media (min-width: $tablet-portrait) {
+@mixin tablet-portrait-down {
+  @media (max-width: $tablet-portrait) {
     @content;
   }
 }
 
-@mixin tablet-landscape-up {
-  @media (min-width: $tablet-landscape) {
+@mixin tablet-landscape-down {
+  @media (max-width: $tablet-landscape) {
     @content;
   }
 }
 
-@mixin desktop-up {
-  @media (min-width: $desktop) {
+@mixin desktop-down {
+  @media (max-width: $desktop) {
     @content;
   }
 }
 
-@mixin medium-desktop-up {
-  @media (min-width: $medium-desktop) {
+@mixin medium-desktop-down {
+  @media (max-width: $medium-desktop) {
+    @content;
+  }
+}
+
+@mixin big-desktop-down {
+  @media (max-width: $big-desktop) {
     @content;
   }
 }
