@@ -201,13 +201,113 @@ export default {
     min-height: 766px;
 
     .witch {
+      max-width: 95%;
       width: 533px;
       height: 437px;
       animation: jump 3s linear 0s infinite;
       transform-style: preserve-3d;
     }
   }
+
+  @include big-desktop-down {
+    padding: 157px 200px 0;
+  }
+  @include medium-desktop-down {
+    .intro {
+      &--right {
+        height: unset;
+      }
+    }
+  }
+
+  @include desktop-down {
+    padding: 157px 80px 0;
+    .intro {
+      &--right {
+        padding: 100px 50px;
+      }
+    }
+  }
+
+  @include tablet-landscape-down {
+    padding: 157px 0 0;
+    .intro {
+      margin-bottom: 40px;
+      flex-direction: column;
+      &--left {
+        width: 100%;
+        margin: unset;
+        padding-inline: 40px;
+        .descript {
+          margin-bottom: 39.5px;
+        }
+        .achievement {
+          width: 100%;
+          flex-direction: row;
+          &__item {
+            flex: 1;
+          }
+        }
+      }
+      &--right {
+        padding: 60px;
+        width: 100%;
+        .info {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .footer {
+      min-height: 600px;
+    }
+  }
+  @include tablet-portrait-down {
+    padding-top: 40px;
+    .intro {
+      &--left {
+        padding-inline: 16px;
+        .title {
+          font-size: 40px;
+          line-height: 50px;
+          margin-bottom: 16px;
+        }
+        .achievement {
+          &__item {
+            margin-bottom: 39.5px;
+            .value {
+              font-size: 44px;
+              line-height: 53.64px;
+              span {
+                font-size: 20px;
+                line-height: 24.38px;
+              }
+            }
+          }
+        }
+      }
+      &--right {
+        padding: 40px 16px;
+        .info {
+          &__image {
+            margin-right: 20px;
+            width: 40px;
+            img {
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      min-height: 345px;
+      .witch {
+        width: 300px;
+        height: 243px;
+      }
+    }
+  }
 }
+
 @keyframes jump {
   0% {
     transform: translateY(0px);
