@@ -62,6 +62,8 @@ export default {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  z-index: 999;
+  overflow: hidden;
 }
 
 .modal {
@@ -72,7 +74,6 @@ export default {
   flex: 1;
   width: 100%;
   height: 100%;
-
   .header {
     display: flex;
     flex-direction: row;

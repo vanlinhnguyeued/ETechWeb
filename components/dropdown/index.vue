@@ -7,7 +7,7 @@
     <img :src="selected.flag" class="flag" />
     <img
       :src="
-        require(`~/assets/icons/arrow-down${forMobile ? '-black' : ''}.png`)
+        require(`../../assets/icons/arrow-down${forMobile ? '-black' : ''}.png`)
       "
       class="icon"
     />
@@ -21,7 +21,7 @@
         <div class="checked">
           <img
             v-show="item.name === selected.name"
-            src="~/assets/icons/checked.png"
+            src="../../assets/icons/checked.png"
             class="seleted"
           />
         </div>
@@ -67,18 +67,18 @@ export default {
       langs: [
         {
           name: this.$t('header.vietnamese'),
-          flag: require('~/assets/icons/flags/vietnam.png'),
+          flag: require('../../assets/icons/flags/vietnam.png'),
           code: 'vi-VN',
         },
         {
           name: this.$t('header.english'),
-          flag: require('~/assets/icons/flags/united-states.png'),
+          flag: require('../../assets/icons/flags/united-states.png'),
           code: 'en-US',
         },
       ],
       selected: {
         name: this.$t('header.english'),
-        flag: require('~/assets/icons/flags/united-states.png'),
+        flag: require('../../assets/icons/flags/united-states.png'),
       },
     }
   },
