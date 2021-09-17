@@ -3,7 +3,7 @@
     <div class="our-partners__title">{{ $t('ourPartners.title') }}</div>
     <div class="our-partners__slide">
       <button class="btn--prev" @click="showPrev()">
-        <img src="../../assets/icons/slick.png" />
+        <img src="../../assets/icons/arrow-square-left.png" />
       </button>
       <div class="slide__container">
         <VueSlickCarousel
@@ -13,6 +13,7 @@
           :slidesToScroll="1"
           :swipe="false"
           ref="carousel"
+          :responsive="slickResponsive"
         >
           <div class="slide__item" v-for="item in partners" :key="item.id">
             <div class="item__content">
@@ -22,7 +23,7 @@
         </VueSlickCarousel>
       </div>
       <button class="btn--next" @click="showNext()">
-        <img src="../../assets/icons/slick.png" />
+        <img src="../../assets/icons/arrow-square-left.png" />
       </button>
     </div>
   </section>
@@ -41,6 +42,32 @@ export default {
         { id: 5, image: require('../../assets/images/partners/partner5.png') },
         { id: 6, image: require('../../assets/images/partners/partner6.png') },
         { id: 7, image: require('../../assets/images/partners/partner7.png') },
+      ],
+      slickResponsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          },
+        },
+        {
+          breakpoint: 900,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            centerMode: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            variableWidth: true,
+          },
+        },
       ],
     }
   },
@@ -110,6 +137,8 @@ export default {
     width: 40px;
     height: 40px;
     border-radius: 10px;
+    background-color: transparent;
+    z-index: 99;
     img {
       width: 40px;
       height: 40px;
@@ -119,6 +148,49 @@ export default {
   .btn--next {
     img {
       transform: rotate(180deg);
+    }
+  }
+
+  @include medium-desktop-down {
+    padding: 60px 100px;
+  }
+
+  @include tablet-landscape-down {
+    padding: 60px;
+  }
+  @include tablet-portrait-down {
+    padding: 0;
+    padding-bottom: 40px;
+    &__title {
+      font-size: 40px;
+      line-height: 50px;
+      letter-spacing: 0.6px;
+      margin: 40px 16px;
+    }
+    &__slide {
+      position: relative;
+    }
+    .slide__container {
+      width: 100%;
+    }
+    .slide__item {
+      width: 220px !important;
+      height: 72px;
+      padding-inline: 12px;
+    }
+    .item__content {
+      width: 188px;
+      height: 72px;
+    }
+
+    .btn--prev,
+    .btn--next {
+      position: absolute;
+      left: 16px;
+    }
+    .btn--next {
+      right: 16px;
+      left: unset;
     }
   }
 }
