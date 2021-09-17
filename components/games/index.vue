@@ -136,7 +136,7 @@ export default {
     max-width: 840px;
     font-family: 'Montserrat', serif;
     font-size: 14px;
-    line-height: 19.6px;
+    line-height: 20px;
     font-weight: 400;
     color: #757575;
     margin-bottom: 80px;
@@ -211,6 +211,89 @@ export default {
         max-width: 100%;
         text-align: left;
         color: #ffffff;
+      }
+    }
+  }
+
+  @include medium-desktop-down {
+    .games {
+      grid: auto / repeat(3, 1fr);
+      gap: 20px;
+
+      .item {
+        &:nth-child(2n) {
+          transform: unset;
+        }
+        &:nth-child(3n - 1) {
+          transform: translateY(118px);
+        }
+      }
+    }
+  }
+
+  @include desktop-down {
+    .games {
+      grid: auto / repeat(2, 1fr);
+      gap: 40px;
+
+      .item {
+        &:nth-child(3n - 1) {
+          transform: unset;
+        }
+        &:nth-child(2n) {
+          transform: translateY(118px);
+        }
+      }
+    }
+  }
+
+  @include tablet-landscape-down {
+    padding: 48px 20px 248px;
+    .games {
+      gap: 20px;
+      .item {
+        height: 450px;
+        &:nth-child(2n) {
+          transform: translateY(36px);
+        }
+        &__title {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+  @include tablet-portrait-down {
+    padding: 48px 16px 87px;
+    .title {
+      font-size: 40px;
+      line-height: 50px;
+      letter-spacing: 0.6px;
+      margin-bottom: 16.5px;
+    }
+
+    .descript {
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 39.5px;
+    }
+    .games {
+      column-gap: 16px;
+      row-gap: 20px;
+      .item {
+        height: 268px;
+        &__title {
+          font-size: 24px;
+          line-height: 30px;
+        }
+        &__content {
+          padding: 0 18px 11px 8px;
+        }
+        &__descript {
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 0.9px;
+        }
       }
     }
   }
