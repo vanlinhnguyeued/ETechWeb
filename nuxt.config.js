@@ -39,17 +39,17 @@ export default {
 
   i18n: {
     locales: [
-      { code: 'vi-VN', iso: 'vi-VN', file: 'vi.js' },
-      { code: 'en-US', iso: 'en-US', file: 'en.js' },
+      { code: 'vi-vn', iso: 'vi-vn', file: 'vi.js' },
+      { code: 'en-us', iso: 'en-us', file: 'en.js' },
     ],
     lazy: true,
     langDir: 'i18n/',
-    defaultLocale: 'en-US',
+    defaultLocale: 'en-us',
     vueI18nLoader: true,
     detectBrowserLanguage: false,
     strategy: 'prefix',
     vueI18n: {
-      fallbackLocale: 'en-US',
+      fallbackLocale: 'en-us',
       fallbackRoot: true,
       silentFallbackWarn: true,
     },

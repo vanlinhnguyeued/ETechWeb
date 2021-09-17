@@ -68,12 +68,12 @@ export default {
         {
           name: this.$t('header.vietnamese'),
           flag: require('../../assets/icons/flags/vietnam.png'),
-          code: 'vi-VN',
+          code: 'vi-vn',
         },
         {
           name: this.$t('header.english'),
           flag: require('../../assets/icons/flags/united-states.png'),
-          code: 'en-US',
+          code: 'en-us',
         },
       ],
       selected: {

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/vi-VN", {data:[{}],fetch:{},mutations:void 0});
