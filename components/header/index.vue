@@ -1,7 +1,7 @@
 <template>
   <div :class="[!isVisibleBacground ? 'header' : 'header fixed', 'noselect']">
     <NuxtLink :to="localePath('/')" class="header__logo">
-      <img src="~/assets/images/logo.svg" class="logo" />
+      <img src="~/assets/images/logo.svg" class="logo" @click="onClick" />
     </NuxtLink>
     <div class="header__menu">
       <Menu />
@@ -56,6 +56,9 @@ export default {
       this.isShowMenu = true
       document.body.classList.add('modal-open')
     },
+    onClick() {
+      this.$router.push('/')
+    },
   },
 }
 </script>
@@ -74,7 +77,17 @@ export default {
   padding: 20px 80px;
 
   &.fixed {
-    background: #441dbb;
+    background: #5851e3;
+    padding: 10px 80px;
+
+    .logo {
+      width: auto;
+      height: 44px;
+    }
+
+    .header__menu {
+      padding-top: 0px;
+    }
   }
 
   &__logo {
@@ -86,6 +99,7 @@ export default {
   .logo {
     width: 109px;
     height: 64px;
+    transition: 0.4s;
   }
 
   &__menu {
@@ -95,6 +109,7 @@ export default {
     align-items: flex-start;
     flex-direction: row;
     padding-top: 20px;
+    transition: 0.4s;
   }
 
   &__menu--mobile {
@@ -112,6 +127,10 @@ export default {
 
   @include tablet-landscape-down {
     padding: 24px 16px;
+    &.fixed {
+      background: #441dbb;
+      padding: 10px 16px;
+    }
   }
 
   @include tablet-portrait-down {

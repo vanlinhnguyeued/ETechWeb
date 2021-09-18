@@ -70,3 +70,19 @@ select:focus,
 textarea {
   font-size: 16px;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #441dbb;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #441dbb80;
+  opacity: 0.5;
+}

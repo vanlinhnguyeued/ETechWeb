@@ -8,7 +8,7 @@ export default {
     english: 'english',
   },
   banner: {
-    title: 'We’re Getting Ready',
+    title: ` We’re \nGetting Ready`,
     descript:
       'We will back to something amazing. Getting the latest updates about our games. Please sign up to our newsletter.',
     days: 'days',

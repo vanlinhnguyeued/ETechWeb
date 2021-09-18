@@ -16,7 +16,7 @@
         <div class="selected">
           <img
             v-show="item.name === selected.name"
-            src="../../assets/icons/tick1.svg"
+            src="~/assets/icons/tick1.svg"
             class="selected-icon"
           />
         </div>
@@ -59,26 +59,26 @@ export default {
       langs: [
         {
           name: this.$t('header.vietnamese'),
-          flag: require('../../assets/icons/flags/vietnam.png'),
+          flag: require('~/assets/icons/flags/vietnam.png'),
           code: 'vi-vn',
         },
         {
           name: this.$t('header.english'),
-          flag: require('../../assets/icons/flags/united-states.png'),
+          flag: require('~/assets/icons/flags/united-states.png'),
           code: 'en-us',
         },
       ],
       selected: {
         name: this.$t('header.english'),
-        flag: require('../../assets/icons/flags/united-states.png'),
+        flag: require('~/assets/icons/flags/united-states.png'),
       },
     }
   },
   computed: {
     iconUrl() {
       return this.forMobile
-        ? require('../../assets/icons/arrow-drop-down-black.svg')
-        : require('../../assets/icons/arrow-drop-down.svg')
+        ? require('~/assets/icons/arrow-drop-down-black.svg')
+        : require('~/assets/icons/arrow-drop-down.svg')
     },
   },
   mounted() {

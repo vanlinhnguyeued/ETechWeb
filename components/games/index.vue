@@ -27,84 +27,84 @@ export default {
           title: 'E-Space',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/e-space.png'),
+          image: require('~/assets/images/games/e-space.png'),
         },
         {
           id: 2,
           title: 'Kingland',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/king-land.png'),
+          image: require('~/assets/images/games/king-land.png'),
         },
         {
           id: 3,
           title: 'The Last Game',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/the-last-game.png'),
+          image: require('~/assets/images/games/the-last-game.png'),
         },
         {
           id: 4,
           title: 'G-Dragon',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/g-dragon.png'),
+          image: require('~/assets/images/games/g-dragon.png'),
         },
         {
           id: 5,
           title: 'Pirates',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/pirates.png'),
+          image: require('~/assets/images/games/pirates.png'),
         },
         {
           id: 6,
           title: 'Witch Party',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/witch-party.png'),
+          image: require('~/assets/images/games/witch-party.png'),
         },
         {
           id: 7,
           title: 'Rocky',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/rocky.png'),
+          image: require('~/assets/images/games/rocky.png'),
         },
         {
           id: 8,
           title: 'Blue Fire',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/blue-fire.png'),
+          image: require('~/assets/images/games/blue-fire.png'),
         },
         {
           id: 9,
           title: 'Magic tree',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/magic-tree.png'),
+          image: require('~/assets/images/games/magic-tree.png'),
         },
         {
           id: 10,
           title: 'Aborigines',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/aborigines.png'),
+          image: require('~/assets/images/games/aborigines.png'),
         },
         {
           id: 11,
           title: 'Cinderella',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/cinderella.png'),
+          image: require('~/assets/images/games/cinderella.png'),
         },
         {
           id: 12,
           title: 'Egypt Game',
           subTitle:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          image: require('../../assets/images/games/egypt-game.png'),
+          image: require('~/assets/images/games/egypt-game.png'),
         },
       ],
     }
@@ -269,8 +269,8 @@ export default {
 
   @include tablet-portrait-down {
     padding: 48px 16px 87px;
-    padding-top: 116px;
-    margin-top: -100px;
+    padding-top: 66px;
+    margin-top: -50px;
     &__title {
       font-size: 40px;
       line-height: 50px;

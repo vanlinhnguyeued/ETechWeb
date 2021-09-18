@@ -1,27 +1,18 @@
 <template>
   <section id="contact-us" class="contact-us">
     <div class="contact-us__images">
-      <img src="../../assets/images/logo.svg" class="image__logo" />
+      <img src="~/assets/images/logo.svg" class="image__logo" />
       <div class="image__socials">
-        <img
-          src="../../assets/icons/twitter.svg"
-          class="image__socials__item"
-        />
-        <img
-          src="../../assets/icons/facebook.svg"
-          class="image__socials__item"
-        />
-        <img
-          src="../../assets/icons/linkedin.svg"
-          class="image__socials__item"
-        />
+        <img src="~/assets/icons/twitter.svg" class="image__socials__item" />
+        <img src="~/assets/icons/facebook.svg" class="image__socials__item" />
+        <img src="~/assets/icons/linkedin.svg" class="image__socials__item" />
       </div>
     </div>
     <div class="contact-us__info">
       <div class="info__address">
         <div class="info__title">{{ $t('contact.address') }}</div>
         <div class="address__detail">
-          <img src="../../assets/icons/location.svg" class="icon" />
+          <img src="~/assets/icons/location.svg" class="icon" />
           <div class="address__branch">
             <div class="mg-bot-12">
               {{ $t('contact.branch1') }}
@@ -32,7 +23,7 @@
           </div>
         </div>
         <div class="address__phone">
-          <img src="../../assets/icons/mobile.svg" class="icon" />
+          <img src="~/assets/icons/mobile.svg" class="icon" />
           <div class="address__phone__detail">
             (+1) 555-0108-000 <span>{{ $t('contact.or') }}</span> (+236)
             555-0108
@@ -46,10 +37,7 @@
         </div>
         <div class="follow__email">
           <input :placeholder="$t('contact.email')" />
-          <img
-            src="../../assets/icons/arrow-right-white.svg"
-            class="arrow-right"
-          />
+          <img src="~/assets/icons/arrow-right-white.svg" class="arrow-right" />
         </div>
       </div>
     </div>
@@ -71,7 +59,7 @@ export default {
   width: 100%;
   height: 446px;
   padding: 104px 230px 0;
-  background-image: url('../../assets/images/contact-bg.png');
+  background-image: url('~/assets/images/contact-bg.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -279,7 +267,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../../assets/images/contact-mobile.png');
+    background-image: url('~/assets/images/contact-mobile.png');
     background-size: 100% 100%;
 
     &__images {

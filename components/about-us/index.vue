@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="about__footer">
-      <img src="../../assets/images/illustrator.png" class="witch" />
+      <img src="~/assets/images/illustrator.png" class="witch" />
     </div>
   </section>
 </template>
@@ -43,19 +43,19 @@ export default {
       info: [
         {
           id: 0,
-          image: require('../../assets/images/info1.svg'),
+          image: require('~/assets/images/info1.svg'),
           title: this.$t('about.infoTitle1'),
           descript: this.$t('about.infoDescript1'),
         },
         {
           id: 1,
-          image: require('../../assets/images/info2.svg'),
+          image: require('~/assets/images/info2.svg'),
           title: this.$t('about.infoTitle2'),
           descript: this.$t('about.infoDescript2'),
         },
         {
           id: 2,
-          image: require('../../assets/images/info3.svg'),
+          image: require('~/assets/images/info3.svg'),
           title: this.$t('about.infoTitle3'),
           descript: this.$t('about.infoDescript3'),
         },
@@ -190,7 +190,7 @@ export default {
     justify-content: center;
     width: 100%;
     margin-top: 28px;
-    background-image: url('../../assets/images/map.png');
+    background-image: url('~/assets/images/map.png');
     background-position: bottom;
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -260,8 +260,8 @@ export default {
   }
 
   @include tablet-portrait-down {
-    padding-top: 140px;
-    margin-top: -100px;
+    padding-top: 90px;
+    margin-top: -50px;
 
     &__footer {
       min-height: 345px;

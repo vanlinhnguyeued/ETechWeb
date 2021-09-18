@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-button" @click="onClick()">
-    <img src="../../assets/icons/arrow-circle.svg" :class="isDown && 'up'" />
+    <img src="~/assets/icons/arrow-circle.png" :class="isDown && 'up'" />
   </div>
 </template>
 
@@ -60,20 +60,12 @@ export default {
   position: fixed;
   bottom: 44.67px;
   right: 80px;
-  z-index: 2;
+  z-index: 100;
   cursor: pointer;
-  width: 66.67px;
-  height: 66.67px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   img {
-    width: auto;
-    height: auto;
+    width: 80px;
+    height: 80px;
     transition: 0.4s;
   }
 

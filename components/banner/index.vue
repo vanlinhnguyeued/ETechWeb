@@ -1,5 +1,6 @@
 <template>
   <div class="banner noselect">
+    <img src="~/assets/images/fairy.png" class="fairy" />
     <div class="title">{{ $t('banner.title') }}</div>
     <div class="count-down">
       <div class="time">
@@ -28,7 +29,7 @@
     <div class="email">
       <input :placeholder="$t('banner.placehold')" />
       <div class="arrow-right">
-        <img src="../../assets/icons/arrow-right.svg" />
+        <img src="~/assets/icons/arrow-right.svg" />
       </div>
     </div>
   </div>
@@ -67,20 +68,23 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../../assets/images/fairy.png'),
-    radial-gradient(
+  background-image: radial-gradient(
       27.72% 27.79% at 50.81% 68.15%,
       #210544 0%,
       rgba(23, 5, 68, 0.71) 50.52%,
       rgba(23, 5, 68, 0) 100%
     ),
-    url('../../assets/images/banner.png');
-  background-size: auto auto, auto 100%, 100% 100%;
-  background-position: 0px 50px, center, center;
+    url('~/assets/images/banner.png');
+  background-size: auto 100%, 100% 100%;
+  background-position: center, center;
   background-repeat: no-repeat;
   width: 100%;
   height: 988.64px;
   position: relative;
+  overflow: hidden;
+  animation-name: animation-face-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 
   .title {
     font-family: 'Playfair Display', serif;
@@ -199,9 +203,22 @@ export default {
     }
   }
 
+  .fairy {
+    height: 938px;
+    width: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    animation-name: wobble;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
   @include medium-desktop-down {
-    background-size: auto 70%, auto 100%, auto 100%;
-    background-position: 0px 90%, center, center;
+    background-size: auto 100%, auto 100%;
+    background-position: center, center;
     .title {
       font-size: 60px;
     }
@@ -225,6 +242,10 @@ export default {
     .discript {
       width: 500px;
     }
+
+    .fairy {
+      height: 600px;
+    }
   }
 
   @include tablet-landscape-down {
@@ -236,20 +257,22 @@ export default {
 
   @include tablet-portrait-down {
     height: 824px;
-    background-image: url('../../assets/images/fairy-crop.png'),
-      url('../../assets/images/bg-mobile.png');
-    background-size: auto 35%, 100% 100%;
-    background-position: 70% 103%, center;
+    background-image: url('~/assets/images/bg-mobile.png');
+    background-size: 100% 100%;
+    background-position: center;
 
     .title {
       font-size: 40px;
       margin-top: 108px;
       line-height: 50px;
       width: 343px;
+      white-space: pre-line;
     }
+
     .count-down {
       width: 343px;
       height: 118px;
+
       .time {
         .value {
           font-size: 36px;
@@ -257,29 +280,78 @@ export default {
           height: 46px;
           line-height: 45px;
         }
+
         .name {
           font-size: 12px;
           margin-top: 3px;
           line-height: 15px;
         }
       }
+
       span {
         font-size: 40px;
       }
     }
+
     .email,
     .discript {
       width: 343px;
     }
+
     .discript {
       margin-top: 40px;
       font-size: 12px;
       line-height: 15px;
       letter-spacing: 0.9px;
     }
+
     .email {
       margin-top: 16px;
     }
+
+    .fairy {
+      height: 351px;
+      width: auto;
+      left: 24%;
+      bottom: -8px;
+    }
+  }
+}
+@keyframes animation-face-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    transform: translate3d(2%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  30% {
+    transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  45% {
+    transform: translate3d(2%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  60% {
+    transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    transform: translate3d(2%, 0, 0) rotate3d(0, 0, 1, -2deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 </style>

@@ -8,7 +8,7 @@ export default {
     english: 'tiếng anh',
   },
   banner: {
-    title: 'Trò chơi sắp ra mắt',
+    title: `Trò chơi \nsắp ra mắt`,
     descript:
       'Chúng tôi sẽ trở lại với một điều tuyệt vời. Để nhận các bản cập nhật mới nhất về trò chơi, vui lòng đăng ký nhận bản tin của chúng tôi.',
     days: 'ngày',

@@ -3,7 +3,7 @@
     <div class="our-partners__title">{{ $t('ourPartners.title') }}</div>
     <div class="our-partners__slide">
       <button class="btn btn--prev" @click="showPrev()">
-        <img src="../../assets/icons/arrow-square-left.svg" />
+        <img src="~/assets/icons/arrow-square-left.svg" />
       </button>
       <div class="slide__container">
         <client-only>
@@ -27,7 +27,7 @@
         </client-only>
       </div>
       <button class="btn btn--next" @click="showNext()">
-        <img src="../../assets/icons/arrow-square-left.svg" />
+        <img src="~/assets/icons/arrow-square-left.svg" />
       </button>
     </div>
   </section>
@@ -39,13 +39,13 @@ export default {
   data() {
     return {
       partners: [
-        { id: 1, image: require('../../assets/images/partners/partner1.png') },
-        { id: 2, image: require('../../assets/images/partners/partner2.png') },
-        { id: 3, image: require('../../assets/images/partners/partner3.png') },
-        { id: 4, image: require('../../assets/images/partners/partner4.png') },
-        { id: 5, image: require('../../assets/images/partners/partner5.png') },
-        { id: 6, image: require('../../assets/images/partners/partner6.png') },
-        { id: 7, image: require('../../assets/images/partners/partner7.png') },
+        { id: 1, image: require('~/assets/images/partners/partner1.png') },
+        { id: 2, image: require('~/assets/images/partners/partner2.png') },
+        { id: 3, image: require('~/assets/images/partners/partner3.png') },
+        { id: 4, image: require('~/assets/images/partners/partner4.png') },
+        { id: 5, image: require('~/assets/images/partners/partner5.png') },
+        { id: 6, image: require('~/assets/images/partners/partner6.png') },
+        { id: 7, image: require('~/assets/images/partners/partner7.png') },
       ],
       slickResponsive: [
         {
@@ -163,8 +163,8 @@ export default {
   @include tablet-portrait-down {
     padding: 0;
     padding-bottom: 40px;
-    padding-top: 100px;
-    margin-top: -100px;
+    padding-top: 50px;
+    margin-top: -50px;
     &__title {
       font-size: 40px;
       line-height: 50px;
