@@ -1,57 +1,55 @@
 <template>
   <section id="contact-us" class="contact-us">
-    <div class="contact-us--left">
-      <div class="logo">
-        <img src="../../assets/images/logo.png" />
-      </div>
-      <div class="socials">
-        <div class="socials__item">
-          <img src="../../assets/icons/twitter.png" />
-        </div>
-        <div class="socials__item">
-          <img src="../../assets/icons/facebook.png" />
-        </div>
-        <div class="socials__item">
-          <img src="../../assets/icons/linkedin.png" />
-        </div>
+    <div class="contact-us__images">
+      <img src="../../assets/images/logo.svg" class="image__logo" />
+      <div class="image__socials">
+        <img
+          src="../../assets/icons/twitter.svg"
+          class="image__socials__item"
+        />
+        <img
+          src="../../assets/icons/facebook.svg"
+          class="image__socials__item"
+        />
+        <img
+          src="../../assets/icons/linkedin.svg"
+          class="image__socials__item"
+        />
       </div>
     </div>
-    <div class="contact-us--right">
-      <div class="address">
-        <div class="title">{{ $t('contact.address') }}</div>
-        <div class="address__infor">
-          <div class="icon">
-            <img src="../../assets/icons/marker.png" />
-          </div>
+    <div class="contact-us__info">
+      <div class="info__address">
+        <div class="info__title">{{ $t('contact.address') }}</div>
+        <div class="address__detail">
+          <img src="../../assets/icons/location.svg" class="icon" />
           <div class="address__branch">
-            <div class="address__branch--1">
+            <div class="mg-bot-12">
               {{ $t('contact.branch1') }}
             </div>
-            <div class="address__branch--2">
+            <div>
               {{ $t('contact.branch2') }}
             </div>
           </div>
         </div>
         <div class="address__phone">
-          <div class="icon">
-            <img src="../../assets/icons/phone.png" />
-          </div>
-          <div class="address__phone__infor">
+          <img src="../../assets/icons/mobile.svg" class="icon" />
+          <div class="address__phone__detail">
             (+1) 555-0108-000 <span>{{ $t('contact.or') }}</span> (+236)
             555-0108
           </div>
         </div>
       </div>
-      <div class="follow">
-        <div class="title">{{ $t('contact.subscribe') }}</div>
-        <div class="descript">
+      <div class="info__follow">
+        <div class="info__title">{{ $t('contact.subscribe') }}</div>
+        <div class="follow__descript">
           {{ $t('contact.subDescript') }}
         </div>
-        <div class="email">
+        <div class="follow__email">
           <input :placeholder="$t('contact.email')" />
-          <div class="arrow-right">
-            <img src="../../assets/icons/arrow-right-white.png" />
-          </div>
+          <img
+            src="../../assets/icons/arrow-right-white.svg"
+            class="arrow-right"
+          />
         </div>
       </div>
     </div>
@@ -78,44 +76,34 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
 
-  &--left {
+  &__images {
     display: flex;
     flex-direction: column;
+  }
 
-    .logo {
-      width: 163.23px;
-      height: 96px;
-      margin-bottom: 40px;
+  .image__logo {
+    width: 163.23px;
+    height: 96px;
+    margin-bottom: 40px;
+  }
 
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .socials {
+  .image__socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 168px;
+    &__item {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 168px;
-      &__item {
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          width: auto;
-          height: auto;
-        }
-      }
+      justify-content: center;
+      align-items: center;
     }
   }
 
-  &--right {
+  &__info {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -125,93 +113,90 @@ export default {
     font-weight: 400;
     line-height: 20px;
     color: #ffffff;
+  }
 
-    .address,
-    .follow {
+  .info__address,
+  .info__follow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 410px;
+    margin-right: 40px;
+
+    .address__detail {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .address__branch {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       justify-content: flex-start;
-      max-width: 410px;
-      margin-right: 40px;
-
-      &__infor {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 40px;
-      }
-
-      &__branch {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex: 1;
-
-        &--1 {
-          margin-bottom: 12px;
-        }
-      }
-
-      &__phone {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-
-      span {
-        margin-inline: 8px;
-      }
-    }
-    .follow {
-      margin-right: 0;
-    }
-    .descript {
-      margin-bottom: 12px;
+      align-items: flex-start;
+      flex: 1;
     }
 
-    .email {
-      width: 100%;
-      height: 56px;
-      margin-top: 32px;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
+    .address__phone {
       display: flex;
-      align-items: center;
       flex-direction: row;
-      border-radius: 8px;
-      border: 1px solid #ffffff;
+      align-items: center;
+    }
 
-      input {
-        flex: 1;
-        height: 100%;
-        border: none;
-        outline: none;
-        padding: 18px 14px;
-        font-size: 14px;
-        line-height: 19.6px;
-        font-family: 'Montserrat', serif;
-        font-weight: 400;
-        color: #ffffff;
-        background-color: transparent;
-      }
+    span {
+      margin-inline: 8px;
+    }
+  }
 
-      .arrow-right {
-        width: 24px;
-        height: 24px;
-        margin-right: 17px;
-        cursor: pointer;
-        transition: 0.3s;
-        &:hover {
-          transform: scale(1.5);
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
+  .info__follow {
+    margin-right: 0;
+  }
+
+  .follow__descript {
+    margin-bottom: 12px;
+  }
+
+  .mg-bot-12 {
+    margin-bottom: 12px;
+  }
+
+  .follow__email {
+    width: 100%;
+    height: 56px;
+    margin-top: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+
+    input {
+      flex: 1;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 18px 14px;
+      font-size: 14px;
+      line-height: 19.6px;
+      font-family: 'Montserrat', serif;
+      font-weight: 400;
+      color: #ffffff;
+      background-color: transparent;
+    }
+
+    .arrow-right {
+      width: 24px;
+      height: 24px;
+      margin-right: 17px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.5);
       }
     }
   }
@@ -223,14 +208,9 @@ export default {
     width: 40px;
     height: 40px;
     margin-right: 8px;
-
-    img {
-      width: auto;
-      height: auto;
-    }
   }
 
-  .title {
+  .info__title {
     font-family: 'Montserrat', serif;
     font-size: 24px;
     font-weight: 700;
@@ -259,7 +239,7 @@ export default {
     padding-inline: 60px;
     background-size: auto 100%;
 
-    &--left {
+    &__images {
       margin-right: 50px;
     }
   }
@@ -267,23 +247,28 @@ export default {
   @include tablet-landscape-down {
     height: auto;
     padding: 40px 40px 62px;
-    &--right {
+    &__info {
       display: flex;
       flex-direction: column;
-      .address {
+
+      .info__address {
         margin-right: 0;
         margin-bottom: 68px;
-        &__infor {
+
+        .address__detail {
           margin-bottom: 20px;
         }
       }
-      .title {
+
+      .info__title {
         margin-bottom: 20px;
       }
-      .descript {
+
+      .follow__descript {
         margin-bottom: 0;
       }
-      .email {
+
+      .follow__email {
         margin-top: 17px;
       }
     }
@@ -296,16 +281,18 @@ export default {
     align-items: center;
     background-image: url('../../assets/images/contact-mobile.png');
     background-size: 100% 100%;
-    &--left {
+
+    &__images {
       margin-right: unset;
       margin-bottom: 68px;
     }
 
-    &--right {
+    &__info {
       align-items: center;
       width: 100%;
-      .address,
-      .follow {
+
+      .info__address,
+      .info__follow {
         max-width: 100%;
       }
     }

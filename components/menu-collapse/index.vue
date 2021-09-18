@@ -4,10 +4,10 @@
       <div class="modal">
         <div class="header">
           <div class="dropdown-lang__container">
-            <Dropdown :forMobile="true" />
+            <Dropdown :for-mobile="true" />
           </div>
           <div class="btn-close" @click="close">
-            <img src="~/assets/icons/close.png" />
+            <img src="~/assets/icons/close.svg" />
           </div>
         </div>
         <ul class="navbar-nav">
@@ -64,50 +64,54 @@ export default {
   height: 100vh;
   z-index: 999;
   overflow: hidden;
+
+  .modal {
+    background-color: #ffffff;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.modal {
-  background-color: #ffffff;
-  overflow-x: hidden;
+.header {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 16px;
-  }
-  .navbar-nav {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    list-style-type: none;
-    padding: 40px 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+}
 
-    .nuxt-link {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      border-bottom: 1px solid #eeeeee;
-      padding-bottom: 24px;
-      margin-bottom: 24px;
-      font-family: 'Montserrat', serif;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 17.5px;
-      color: #000000;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .nuxt-link-active {
-      color: #441dbb;
-    }
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 40px 16px;
+
+  .nuxt-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17.5px;
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .nuxt-link-active {
+    color: #441dbb;
+    opacity: 0.5;
   }
 }
 

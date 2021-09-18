@@ -28,7 +28,7 @@
     <div class="email">
       <input :placeholder="$t('banner.placehold')" />
       <div class="arrow-right">
-        <img src="../../assets/icons/arrow-right.png" />
+        <img src="../../assets/icons/arrow-right.svg" />
       </div>
     </div>
   </div>
@@ -68,9 +68,15 @@ export default {
   flex-direction: column;
   align-items: center;
   background-image: url('../../assets/images/fairy.png'),
+    radial-gradient(
+      27.72% 27.79% at 50.81% 68.15%,
+      #210544 0%,
+      rgba(23, 5, 68, 0.71) 50.52%,
+      rgba(23, 5, 68, 0) 100%
+    ),
     url('../../assets/images/banner.png');
-  background-size: auto auto, 100% 100%;
-  background-position: 0px 50px, center;
+  background-size: auto auto, auto 100%, 100% 100%;
+  background-position: 0px 50px, center, center;
   background-repeat: no-repeat;
   width: 100%;
   height: 988.64px;
@@ -194,8 +200,8 @@ export default {
   }
 
   @include medium-desktop-down {
-    background-size: auto 70%, auto 100%;
-    background-position: 0px 90%, center;
+    background-size: auto 70%, auto 100%, auto 100%;
+    background-position: 0px 90%, center, center;
     .title {
       font-size: 60px;
     }

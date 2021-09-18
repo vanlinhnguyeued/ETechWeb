@@ -1,14 +1,14 @@
 <template>
   <div :class="[!isVisibleBacground ? 'header' : 'header fixed', 'noselect']">
-    <NuxtLink :to="localePath('/')" class="header--left">
-      <img src="~/assets/images/logo.png" class="logo" />
+    <NuxtLink :to="localePath('/')" class="header__logo">
+      <img src="~/assets/images/logo.svg" class="logo" />
     </NuxtLink>
-    <div class="header--right">
+    <div class="header__menu">
       <Menu />
       <Dropdown />
     </div>
-    <div class="header--menu" @click="openMenu">
-      <img src="~/assets/icons/menu.png" />
+    <div class="header__menu--mobile" @click="openMenu">
+      <img src="~/assets/icons/menu.svg" />
     </div>
     <MenuCollapse v-show="isShowMenu" @close="closeMenu" />
   </div>
@@ -72,19 +72,23 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 80px;
+
   &.fixed {
     background: #441dbb;
   }
-  &--left {
+
+  &__logo {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    .logo {
-      width: 109px;
-      height: 64px;
-    }
   }
-  &--right {
+
+  .logo {
+    width: 109px;
+    height: 64px;
+  }
+
+  &__menu {
     flex: 1;
     display: flex;
     justify-content: flex-end;
@@ -92,26 +96,30 @@ export default {
     flex-direction: row;
     padding-top: 20px;
   }
-  &--menu {
+
+  &__menu--mobile {
     display: none;
     width: 40px;
     height: 40px;
     align-self: center;
     cursor: pointer;
+
     img {
       width: 100%;
       height: 100%;
     }
   }
+
   @include tablet-landscape-down {
     padding: 24px 16px;
   }
 
   @include tablet-portrait-down {
-    &--right {
+    &__menu {
       display: none;
     }
-    &--menu {
+
+    &__menu--mobile {
       display: flex;
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-button" @click="onClick()">
-    <img src="../../assets/icons/arrow-scroll.png" :class="isDown && 'up'" />
+    <img src="../../assets/icons/arrow-circle.svg" :class="isDown && 'up'" />
   </div>
 </template>
 
@@ -39,7 +39,10 @@ export default {
     },
     onClick() {
       if (this.isDown) {
-        window.scrollTo(0, 0)
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
       } else {
         const element = document.getElementById('about-us')
         window.scrollTo({

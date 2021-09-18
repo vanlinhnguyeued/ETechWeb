@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">2017 Copyright. Policy.</div>
+  <div class="footer">2021 Copyright. Policy.</div>
 </template>
 
 <script>

@@ -4,29 +4,24 @@
     :class="!forMobile ? 'dropdown' : 'dropdown-mobile'"
     @click="onClick()"
   >
-    <img :src="selected.flag" class="flag" />
-    <img
-      :src="
-        require(`../../assets/icons/arrow-down${forMobile ? '-black' : ''}.png`)
-      "
-      class="icon"
-    />
+    <img :src="selected.flag" class="dropdown__flag" />
+    <img :src="iconUrl" class="dropdown__icon" />
     <div :class="isShow ? 'dropdown--show' : 'dropdown--hidden'">
       <NuxtLink
         v-for="(item, index) in langs"
         :key="item.name"
         :to="switchLocalePath(`${item.code}`)"
-        :class="['item', index == 0 && 'boder--bottom']"
+        :class="['langs__item', index == 0 && 'boder--bottom']"
       >
-        <div class="checked">
+        <div class="selected">
           <img
             v-show="item.name === selected.name"
-            src="../../assets/icons/checked.png"
-            class="seleted"
+            src="../../assets/icons/tick1.svg"
+            class="selected-icon"
           />
         </div>
-        <img :src="item.flag" class="flag" />
-        <div class="name">{{ item.name }}</div>
+        <img :src="item.flag" class="dropdown__flag" />
+        <div class="dropdown__name">{{ item.name }}</div>
       </NuxtLink>
     </div>
   </div>
@@ -35,14 +30,6 @@
 <script>
 export default {
   name: 'Dropdown',
-
-  props: {
-    forMobile: {
-      type: Boolean,
-      required: false,
-    },
-  },
-
   directives: {
     'click-outside': {
       bind: function (el, binding) {
@@ -60,7 +47,12 @@ export default {
       },
     },
   },
-
+  props: {
+    forMobile: {
+      type: Boolean,
+      required: false,
+    },
+  },
   data() {
     return {
       isShow: false,
@@ -82,13 +74,18 @@ export default {
       },
     }
   },
-
+  computed: {
+    iconUrl() {
+      return this.forMobile
+        ? require('../../assets/icons/arrow-drop-down-black.svg')
+        : require('../../assets/icons/arrow-drop-down.svg')
+    },
+  },
   mounted() {
     this.selected = this.langs.find((item) =>
       location.pathname.includes(item.code)
     )
   },
-
   methods: {
     clickOutside() {
       this.isShow = false
@@ -106,82 +103,82 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 3.33px;
   cursor: pointer;
   position: relative;
-
-  .flag {
-    width: 33.33px;
-    height: 33.33px;
-  }
-
-  .icon {
-    width: 10px;
-    height: 5px;
-    margin-left: 14.33px;
-  }
-
-  .dropdown--show,
-  .dropdown--hidden {
-    width: 156px;
-    height: 81px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    position: absolute;
-    bottom: -87px;
-    right: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8px;
-    transition: all 0.3s ease-in;
-    overflow: hidden;
-    visibility: visible;
-    opacity: 1;
-    border: 1px solid #eeeeee;
-  }
-
-  .dropdown--hidden {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    cursor: pointer;
-    flex: 1;
-
-    .checked {
-      margin-left: 2px;
-      margin-right: 13.27px;
-      width: 20.06px;
-      height: 14.73px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    .name {
-      font-family: Montserrat;
-      font-size: 10px;
-      font-weight: bold;
-      color: #000000;
-      line-height: 17.5px;
-      margin-left: 7.33px;
-      text-transform: capitalize;
-    }
-  }
-
-  .boder--bottom {
-    border-bottom: solid 1px #c4c4c4;
-  }
 }
+
+.dropdown__flag {
+  width: 40px;
+  height: 40px;
+}
+
+.dropdown__icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+}
+
+.dropdown--show,
+.dropdown--hidden {
+  width: 156px;
+  height: 81px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  bottom: -87px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  transition: all 0.3s ease-in;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  border: 1px solid #eeeeee;
+}
+
+.dropdown--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.langs__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  flex: 1;
+}
+
+.selected {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.selected-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dropdown__name {
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 17.5px;
+  margin-left: 4px;
+  text-transform: capitalize;
+}
+
+.boder--bottom {
+  border-bottom: solid 1px #c4c4c4;
+}
+
 .dropdown-mobile {
   width: 80px;
   height: 40px;
@@ -189,11 +186,15 @@ export default {
   border: 1px solid #afafaf;
   padding: 4px 12px;
   border-radius: 8px;
-  .icon {
-    width: 10px;
-    height: 5px;
-    margin-left: 9.67px;
+  .dropdown__flag {
+    width: 32px;
+    height: 32px;
   }
+
+  .dropdown__icon {
+    margin-left: 0;
+  }
+
   .dropdown--hidden,
   .dropdown--show {
     left: 0px;

@@ -68,4 +68,7 @@ export default {
     background: 'white',
   },
   target: 'static',
+  server: {
+    host: '0.0.0.0',
+  },
 }

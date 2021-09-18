@@ -50,24 +50,15 @@ export default {
     text-transform: uppercase;
     color: #ffffff;
     position: relative;
+    transition: 0.3s;
+
     &:hover {
-      &::before {
-        width: 100%;
-      }
+      opacity: 0.7;
     }
   }
-  .nuxt-link-active::before,
-  &__item::before {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background-color: #ffffff;
-    position: absolute;
-    bottom: -10px;
-    transition: 0.3s;
-  }
-  .nuxt-link-active::before {
-    width: 100%;
+
+  .nuxt-link-active {
+    opacity: 0.5;
   }
 
   @include desktop-down {
