@@ -1,0 +1,103 @@
+.dropdown-mobile,
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown__flag {
+  width: 40px;
+  height: 40px;
+}
+
+.dropdown__icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+}
+
+.dropdown--show,
+.dropdown--hidden {
+  width: 156px;
+  height: 81px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  bottom: -87px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  transition: all 0.3s ease-in;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  border: 1px solid #eeeeee;
+}
+
+.dropdown--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.langs__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  flex: 1;
+}
+
+.selected {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.selected-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dropdown__name {
+  font-family: $font-montserrat;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 17.5px;
+  margin-left: 4px;
+  text-transform: capitalize;
+}
+
+.boder--bottom {
+  border-bottom: solid 1px #c4c4c4;
+}
+
+.dropdown-mobile {
+  width: 80px;
+  height: 40px;
+  background-color: #f6f6f6;
+  border: 1px solid #afafaf;
+  padding: 4px 12px;
+  border-radius: 8px;
+  .dropdown__flag {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dropdown__icon {
+    margin-left: 0;
+  }
+
+  .dropdown--hidden,
+  .dropdown--show {
+    left: 0px;
+    right: unset;
+  }
+}
