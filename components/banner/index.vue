@@ -39,7 +39,7 @@
 export default {
   name: 'Banner',
   data() {
-    return { diff: 3600 * 24 * 10, interval: null }
+    return { diff: 3600 * 24 * 30 + 18 * 3600 + 20 * 60 + 11, interval: null }
   },
   computed: {
     seconds() {
